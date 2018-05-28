@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Tu Pedido</string>
+    <string name="UserName">Nombre de Usuario</string>
+    <string name="navigation_drawer_open">Abrir Navegación</string>
+    <string name="navigation_drawer_close">Cerrar Navegación</string>
+    <string name="action_settings">Configuración</string>
+    <string name="Login">Inicio de Sesión</string>
+    <string name="NewUser">¿Nuevo Usuario?,</string>
+    <string name="Password">Contraseña</string>
+    <string name="SignIn">Regístrate aquí</string>
 </resources>
