@@ -38,6 +38,7 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString("user", user.getText().toString());
             editor.putString("password", password.getText().toString());
+            editor.putBoolean("persistence", true);
             editor.commit();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);

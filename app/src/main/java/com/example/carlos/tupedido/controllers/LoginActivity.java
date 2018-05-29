@@ -22,8 +22,8 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityInt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        txt_username = (TextView) findViewById(R.id.txt_username);
-        txt_password = (TextView) findViewById(R.id.txt_password);
+        txt_username = findViewById(R.id.txt_username);
+        txt_password = findViewById(R.id.txt_password);
     }
 
     @Override
@@ -39,25 +39,23 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityInt
     @Override
     public void Login(View view) {
         sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
-
         String user = sharedPreferences.getString("user", null);
         String password = sharedPreferences.getString("password", null);
 
         if (txt_username.getText().toString().isEmpty() || txt_password.getText().toString().isEmpty()) {
             Toast.makeText(this, "Some Field is empty", Toast.LENGTH_SHORT).show();
         } else {
-            if ((user == txt_username.getText().toString()) && (password == txt_username.getText().toString())) {
-
+            if (txt_username.getText().toString().trim().equals(user.trim()) && (txt_password.getText().toString().trim().equals(password.trim()))) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("user", txt_username.getText().toString());
                 editor.putString("password", txt_password.getText().toString());
-                editor.commit();
-
+                editor.putBoolean("persistence", true);
+                editor.apply();
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }
             else
-                Toast.makeText(this, "Credentials not valid", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Credentials invalid", Toast.LENGTH_SHORT).show();
         }
     }
 

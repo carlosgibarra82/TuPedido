@@ -32,11 +32,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     @Override
     public void initSharedPreferences(){
-        sharedPreferences = getSharedPreferences("PreferencesYourOrder", Context.MODE_PRIVATE);
-
+        sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
         String user = sharedPreferences.getString("user", null);
-
-        if ( (user == null) || (user.equals("")) ){
+        boolean persistence = sharedPreferences.getBoolean("persistence", false);
+        if (((user == null) || (user.equals("")) || (!persistence) )){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }else {
@@ -62,6 +61,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    @Override
+    public void logOut() {
+        sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("persistence", false);
+        editor.commit();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 
 
     @Override
@@ -114,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+            logOut();
 
         }
 
