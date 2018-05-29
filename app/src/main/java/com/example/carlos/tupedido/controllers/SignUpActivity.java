@@ -36,6 +36,7 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
 
             sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
+            
             editor.putString("user", user.getText().toString());
             editor.putString("password", password.getText().toString());
             editor.putBoolean("persistence", true);
