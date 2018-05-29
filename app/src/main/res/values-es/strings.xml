@@ -12,4 +12,9 @@
     <string name="Email">Correo Electrónico</string>
     <string name="CellPhone">Celular</string>
     <string name="ConfirmPassword">Confirmar Contraseña</string>
+    <string name="welcome">"Bienvenid@, "</string>
+    <string name="Products">Productos</string>
+    <string name="MyOrders">Mis Órdenes</string>
+    <string name="Promotions">Promociones</string>
+    <string name="Exit">Salir</string>
 </resources>

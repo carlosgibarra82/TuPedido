@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.carlos.tupedido.R;
 import com.example.carlos.tupedido.interfaces.MainActivityInterface;
@@ -22,18 +23,19 @@ import com.example.carlos.tupedido.interfaces.MainActivityInterface;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,MainActivityInterface{
 
     SharedPreferences sharedPreferences;
+    TextView userName;
+    String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         initSharedPreferences();
 
     }
     @Override
     public void initSharedPreferences(){
         sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
-        String user = sharedPreferences.getString("user", null);
+        user = sharedPreferences.getString("user", null);
         boolean persistence = sharedPreferences.getBoolean("persistence", false);
         if (((user == null) || (user.equals("")) || (!persistence) )){
             Intent intent = new Intent(this, LoginActivity.class);
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             toggle.syncState();
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+
         }
     }
 
@@ -87,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        userName = findViewById(R.id.UserName);
+        userName.setText(user);
         return true;
     }
 
@@ -111,19 +116,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_products) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_myorders) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_promotions) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_exit) {
             logOut();
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
