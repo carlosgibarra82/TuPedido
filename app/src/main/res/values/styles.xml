@@ -20,6 +20,7 @@
     <style name="EditTextWhite">
         <item name="android:textSize">30dp</item>
         <item name="android:textColorHint">#ffffff</item>
+        <item name="android:textColor">#ffffff</item>
         <item name="colorAccent">#ffffff</item>
         <item name="colorControlNormal">#ffffff</item>
         <item name="colorControlActivated">#ffffff</item>

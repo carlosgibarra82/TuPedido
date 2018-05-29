@@ -9,4 +9,7 @@
     <string name="NewUser">¿Nuevo Usuario?,</string>
     <string name="Password">Contraseña</string>
     <string name="SignIn">Regístrate aquí</string>
+    <string name="Email">Correo Electrónico</string>
+    <string name="CellPhone">Celular</string>
+    <string name="ConfirmPassword">Confirmar Contraseña</string>
 </resources>
