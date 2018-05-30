@@ -1,4 +1,4 @@
-package com.example.carlos.tupedido.controllers;
+package com.example.carlos.tupedido.Controllers;
 
 
 import android.content.Context;
@@ -20,7 +20,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.carlos.tupedido.R;
-import com.example.carlos.tupedido.interfaces.MainActivityInterface;
+import com.example.carlos.tupedido.Interfaces.MainActivityInterface;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,MainActivityInterface{
 
@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new HomeFragment();
             FragmentTransaction = true;
         }else if (id == R.id.nav_products) {
+            System.out.println(id);
             fragment = new ProductsFragment();
             FragmentTransaction = true;
 
@@ -138,6 +139,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (FragmentTransaction) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment).commit();
+            item.setChecked(true);
+            getSupportActionBar().setTitle(item.getTitle());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

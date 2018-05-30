@@ -1,4 +1,4 @@
-package com.example.carlos.tupedido.interfaces;
+package com.example.carlos.tupedido.Interfaces;
 
 public interface MainActivityInterface {
     void initSharedPreferences();

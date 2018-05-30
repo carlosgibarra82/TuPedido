@@ -1,4 +1,4 @@
-package com.example.carlos.tupedido.controllers;
+package com.example.carlos.tupedido.Controllers;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.carlos.tupedido.R;
-import com.example.carlos.tupedido.interfaces.SignupActivityInterface;
+import com.example.carlos.tupedido.Interfaces.SignupActivityInterface;
 
 public class SignUpActivity extends AppCompatActivity implements SignupActivityInterface{
 

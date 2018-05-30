@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/logo"
-    tools:context="com.example.carlos.tupedido.controllers.SignUpActivity">
+    tools:context="com.example.carlos.tupedido.Controllers.SignUpActivity">
 
 
     <android.support.design.widget.TextInputLayout
