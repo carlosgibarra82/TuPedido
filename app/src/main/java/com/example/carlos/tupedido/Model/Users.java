@@ -1,30 +1,23 @@
 package com.example.carlos.tupedido.Model;
 
 public class Users {
-    private int id;
-    private String user_name;
+
+    private String username;
     private String password;
 
-    public Users(int id, String user_name, String password) {
-        this.id = id;
-        this.user_name = user_name;
+    public Users(String username, String password) {
+
+        this.username = username;
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -33,5 +26,13 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

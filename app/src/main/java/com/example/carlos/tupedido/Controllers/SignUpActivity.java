@@ -9,8 +9,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
+import com.example.carlos.tupedido.ApiRest.Service;
+import com.example.carlos.tupedido.Model.Users;
 import com.example.carlos.tupedido.R;
 import com.example.carlos.tupedido.Interfaces.SignupActivityInterface;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class SignUpActivity extends AppCompatActivity implements SignupActivityInterface{
 
@@ -36,17 +44,26 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
 
             sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            
+            putData();
             editor.putString("user", user.getText().toString());
             editor.putString("password", password.getText().toString());
             editor.putBoolean("persistence", true);
             editor.commit();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+
+
         }
         else{
             Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void putData(){
+        RestApiAdapter restApiAdapter = new RestApiAdapter();
+        Service service = restApiAdapter.getClientService();
+        service.saveUser(user.getText().toString(),password.getText().toString());
+
     }
 
 }
