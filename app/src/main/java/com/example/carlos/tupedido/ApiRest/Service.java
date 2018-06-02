@@ -14,6 +14,14 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface Service {
+
+    @POST(Constants.URL_POST_USER)
+    @FormUrlEncoded
+    Call<List<Users>> saveUser(
+            @Field("username") String username,
+            @Field("password") String password
+    );
+
     @GET(Constants.URL_GET_USER)
     Call<List<Users>> getDataUsers();
 
@@ -25,9 +33,4 @@ public interface Service {
 
     @GET(Constants.URL_GET_DRINKS)
     Call<List<Drinks>> getDataDrinks();
-
-    @POST("/users")
-    @FormUrlEncoded
-    Call<Users> saveUser(@Field("username") String username,
-                        @Field("password") String password);
 }
