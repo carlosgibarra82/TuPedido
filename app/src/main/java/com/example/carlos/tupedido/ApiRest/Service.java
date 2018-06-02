@@ -26,7 +26,7 @@ public interface Service {
     @GET(Constants.URL_GET_DRINKS)
     Call<List<Drinks>> getDataDrinks();
 
-    @POST(Constants.URL_POST_USER)
+    @POST("/users")
     @FormUrlEncoded
     Call<Users> saveUser(@Field("username") String username,
                         @Field("password") String password);

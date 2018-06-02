@@ -19,6 +19,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SignUpActivity extends AppCompatActivity implements SignupActivityInterface{
 
@@ -62,8 +63,24 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
     public void putData(){
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Service service = restApiAdapter.getClientService();
-        service.saveUser(user.getText().toString(),password.getText().toString());
+        service.saveUser(user.getText().toString(),password.getText().toString()).enqueue(new Callback<Users>() {
+            @Override
+            public void onResponse(Call<Users> call, Response<Users> response) {
+                if(response.isSuccessful()){
+                    showResponse(response.body().toString());
+                }
+            }
 
+            @Override
+            public void onFailure(Call<Users> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    public void showResponse(String response){
+        Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
     }
 
 }
