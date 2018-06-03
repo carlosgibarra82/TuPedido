@@ -1,9 +1,10 @@
 package com.example.carlos.tupedido.ApiRest;
 
-import com.example.carlos.tupedido.Model.Devices;
-import com.example.carlos.tupedido.Model.Dishes;
-import com.example.carlos.tupedido.Model.Drinks;
-import com.example.carlos.tupedido.Model.Users;
+import com.example.carlos.tupedido.model.Devices;
+import com.example.carlos.tupedido.model.Dishes;
+import com.example.carlos.tupedido.model.Drinks;
+import com.example.carlos.tupedido.model.Users;
+import com.example.carlos.tupedido.model.Vf_images;
 
 import java.util.List;
 
@@ -33,4 +34,7 @@ public interface Service {
 
     @GET(Constants.URL_GET_DRINKS)
     Call<List<Drinks>> getDataDrinks();
+
+    @GET(Constants.URL_GET_VF_IMAGES)
+    Call<List<Vf_images>> getVfImages();
 }

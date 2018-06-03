@@ -17,4 +17,7 @@
     <string name="MyOrders">Mis Órdenes</string>
     <string name="Promotions">Promociones</string>
     <string name="Exit">Salir</string>
+    <string name="Home">Inicio</string>
+    <string name="dish">Plato</string>
+    <string name="OurProducts">Nuestros Productos</string>
 </resources>

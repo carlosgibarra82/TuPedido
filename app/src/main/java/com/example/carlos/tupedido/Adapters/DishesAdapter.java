@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.carlos.tupedido.Model.Dishes;
+import com.example.carlos.tupedido.model.Dishes;
 import com.example.carlos.tupedido.R;
 import com.squareup.picasso.Picasso;
 

@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             toggle.syncState();
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new HomeFragment()).commit();
         }
     }
 
@@ -125,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new HomeFragment();
             FragmentTransaction = true;
         }else if (id == R.id.nav_products) {
-            System.out.println(id);
             fragment = new ProductsFragment();
             FragmentTransaction = true;
 

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
 import com.example.carlos.tupedido.ApiRest.Service;
-import com.example.carlos.tupedido.Model.Users;
+import com.example.carlos.tupedido.model.Users;
 import com.example.carlos.tupedido.R;
 import com.example.carlos.tupedido.Interfaces.SignupActivityInterface;
 
@@ -44,24 +44,29 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
     @Override
     public void SignIn(View view) {
 
-        if(password.getText().toString().equals(confirm_password.getText().toString())) {
-            Users newUser = new Users(user.getText().toString(),password.getText().toString());
-            putData(newUser);
+        if(user.getText().length()!=0 && password.getText().length()!=0) {
+            if (password.getText().toString().equals(confirm_password.getText().toString())) {
+                Users newUser = new Users(user.getText().toString(), password.getText().toString());
+                putData(newUser);
 
-            sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("user", user.getText().toString());
-            editor.putString("password", password.getText().toString());
-            editor.putBoolean("persistence", true);
-            editor.commit();
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+                sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("user", user.getText().toString());
+                editor.putString("password", password.getText().toString());
+                editor.putBoolean("persistence", true);
+                editor.commit();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
 
 
+            } else {
+                Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+            }
         }
-        else{
-            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+        else {
+            Toast.makeText(this, "Fields are empty", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     public void putData(Users user){

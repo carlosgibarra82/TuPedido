@@ -1,4 +1,4 @@
-package com.example.carlos.tupedido.Model;
+package com.example.carlos.tupedido.model;
 
 import java.util.List;
 

@@ -9,11 +9,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.carlos.tupedido.Adapters.DishesAdapter;
 import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
 import com.example.carlos.tupedido.ApiRest.Service;
-import com.example.carlos.tupedido.Model.Dishes;
-import com.example.carlos.tupedido.Model.Users;
+import com.example.carlos.tupedido.model.Users;
 import com.example.carlos.tupedido.R;
 import com.example.carlos.tupedido.Interfaces.LoginActivityInterface;
 

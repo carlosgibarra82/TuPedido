@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Controllers.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ViewFlipper
+        android:padding="20dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="300dp"
+        android:id="@+id/v_Flipper"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btn_products"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:background="@color/material_orange_500"
+
+        android:text="@string/OurProducts"
+        android:textColor="@color/colorAccent" />
+
+
+</RelativeLayout>
