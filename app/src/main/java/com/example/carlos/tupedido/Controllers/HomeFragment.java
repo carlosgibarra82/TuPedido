@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
-
 
 import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
 import com.example.carlos.tupedido.ApiRest.Service;
@@ -48,13 +46,10 @@ public class HomeFragment extends Fragment{
         getData();
         viewFlipper.setFlipInterval(3000);
         viewFlipper.setAutoStart(true);
-        btn_products = (Button) view.findViewById(R.id.btn_products);
+        btn_products = view.findViewById(R.id.btn_products);
         btn_products.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Log.d("mensa", "sikas");
-
                 FragmentManager manager=getFragmentManager();
                 FragmentTransaction transaction=manager.beginTransaction();
                 transaction=manager.beginTransaction();
@@ -62,8 +57,6 @@ public class HomeFragment extends Fragment{
                 transaction.replace(R.id.content_main,fragmentB);
                 transaction.addToBackStack(null);
                 transaction.commit();
-
-                //getSupportFragmentManager().beginTransaction().replace(R.id.content_main,new HomeFragment()).commit();
             }
         });
 
@@ -100,6 +93,7 @@ public class HomeFragment extends Fragment{
 
     private void setImageInFlipr(String imgUrl) {
         ImageView image = new ImageView(this.getContext());
+        image.setScaleType(ImageView.ScaleType.CENTER_CROP);
         Picasso.get().load(imgUrl).into(image);
         viewFlipper.addView(image);
     }

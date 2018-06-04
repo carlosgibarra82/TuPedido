@@ -56,4 +56,17 @@ public class Dishes {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+
+        return "{type\":\"object\"," +
+                "\"properties\":{" +
+                "\"name\":\"" + name + '\"' +
+                ", \"picture\":\"" + picture + '\"' +
+                ", \"ingredients\":\"" + ingredients + '\"' +
+                ", \"cook_time\":\"" + cook_time + '\"' +
+                ", \"price\":" + price +
+                '}'+'}';
+    }
 }

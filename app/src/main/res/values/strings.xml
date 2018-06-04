@@ -22,4 +22,6 @@
     <string name="Home">Home</string>
     <string name="dish">Dish</string>
     <string name="OurProducts">Our Products</string>
+    <string name="profile">Profile</string>
+    <string name="Ingredients">Ingredients</string>
 </resources>

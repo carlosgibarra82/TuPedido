@@ -28,11 +28,11 @@ public class MyOrdersFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_products, container,false);
 
-        progressBar = (ProgressBar) view.findViewById(R.id.id_pgb_products);
-        recyclerView = (RecyclerView) view.findViewById(R.id.id_rcv_products);
+        progressBar = view.findViewById(R.id.id_pgb_products);
+        recyclerView = view.findViewById(R.id.id_rcv_products);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        progressBar.setVisibility(view.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
 
         return  view;
 

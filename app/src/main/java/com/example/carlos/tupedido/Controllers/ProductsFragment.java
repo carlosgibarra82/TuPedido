@@ -1,19 +1,16 @@
 package com.example.carlos.tupedido.Controllers;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import com.example.carlos.tupedido.Adapters.DishesAdapter;
+import com.example.carlos.tupedido.Adapters.ProductsAdapter;
 import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
 import com.example.carlos.tupedido.ApiRest.Service;
 import com.example.carlos.tupedido.model.Dishes;
@@ -42,10 +39,10 @@ public class ProductsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_products, container,false);
 
-        progressBar = (ProgressBar) view.findViewById(R.id.id_pgb_products);
-        recyclerView = (RecyclerView) view.findViewById(R.id.id_rcv_products);
+        progressBar = view.findViewById(R.id.id_pgb_products);
+        recyclerView = view.findViewById(R.id.id_rcv_products);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        progressBar.setVisibility(view.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
         getData();
         return  view;
     }
@@ -59,11 +56,14 @@ public class ProductsFragment extends Fragment {
             public void onResponse(Call<List<Dishes>> call, Response<List<Dishes>> response) {
                 dishesList = response.body();
                 progressBar.setVisibility(View.GONE);
-                recyclerView.setAdapter(new DishesAdapter(dishesList, getContext()));
+                recyclerView.setAdapter(new ProductsAdapter(dishesList, getContext()));
             }
             @Override
             public void onFailure(Call<List<Dishes>> call, Throwable t) {
             }
         });
     }
+
+
+
 }
