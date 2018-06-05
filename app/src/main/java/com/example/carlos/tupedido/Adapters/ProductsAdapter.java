@@ -15,6 +15,8 @@ import com.example.carlos.tupedido.model.Dishes;
 import com.example.carlos.tupedido.R;
 import com.squareup.picasso.Picasso;
 
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.util.List;
 
 public class ProductsAdapter extends RecyclerView.Adapter{
@@ -36,22 +38,22 @@ public class ProductsAdapter extends RecyclerView.Adapter{
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
         Dishes object = dishesList.get(position);
         ViewHolderDishes viewHolderProducts = (ViewHolderDishes) holder;
         viewHolderProducts.textViewDishName.setText(object.getName());
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        formatter.setMinimumFractionDigits(0);
+        viewHolderProducts.textViewPriceName.setText(formatter.format(object.getPrice()));
         viewHolderProducts.object=object;
         Picasso.get().load(object.getPicture()).into(viewHolderProducts.imageViewDishImg);
-
-
-    }
-
+   }
 
     @Override
     public int getItemCount() {return dishesList.size();}
 
     public class ViewHolderDishes extends RecyclerView.ViewHolder{
         TextView textViewDishName;
+        TextView textViewPriceName;
         ImageView imageViewDishImg;
         Dishes object;
 
@@ -60,16 +62,17 @@ public class ProductsAdapter extends RecyclerView.Adapter{
             final Context context=c;
             textViewDishName = item.findViewById(R.id.id_txt_dish);
             imageViewDishImg = item.findViewById(R.id.id_img_dish);
+            textViewPriceName = item.findViewById(R.id.id_txt_price);
             item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent myIntent = new Intent(context, IngredientsActivity.class);
+                    myIntent.putExtra ("name", object.getName());
                     myIntent.putExtra("picture",object.getPicture().toString());
+                    myIntent.putExtra("ingredients",object.getIngredients().toString());
                     context.startActivity(myIntent);
                 }
             });
         }
-
-
     }
 }

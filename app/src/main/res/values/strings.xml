@@ -24,4 +24,6 @@
     <string name="OurProducts">Our Products</string>
     <string name="profile">Profile</string>
     <string name="Ingredients">Ingredients</string>
+    <string name="price">Price</string>
+    <string name="drinks">Drinks</string>
 </resources>

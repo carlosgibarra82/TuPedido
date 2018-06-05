@@ -20,4 +20,8 @@
     <string name="Home">Inicio</string>
     <string name="dish">Plato</string>
     <string name="OurProducts">Nuestros Productos</string>
+    <string name="profile">Perfil</string>
+    <string name="Ingredients">Ingredientes</string>
+    <string name="price">Precio</string>
+    <string name="drinks">Bebidas</string>
 </resources>
