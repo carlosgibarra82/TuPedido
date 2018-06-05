@@ -3,6 +3,7 @@ package com.example.carlos.tupedido.ApiRest;
 import com.example.carlos.tupedido.model.Devices;
 import com.example.carlos.tupedido.model.Dishes;
 import com.example.carlos.tupedido.model.Drinks;
+import com.example.carlos.tupedido.model.Promo;
 import com.example.carlos.tupedido.model.Users;
 import com.example.carlos.tupedido.model.Vf_images;
 
@@ -37,4 +38,7 @@ public interface Service {
 
     @GET(Constants.URL_GET_VF_IMAGES)
     Call<List<Vf_images>> getVfImages();
+
+    @GET(Constants.URL_GET_PROMO)
+    Call<List<Promo>> getDataPromo();
 }

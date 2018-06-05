@@ -9,5 +9,6 @@ public class Constants {
     public static final String URL_POST_ORDER = "order";
     public static final String URL_POST_USER="users";
     public static final String URL_GET_VF_IMAGES = "images";
+    public static final String URL_GET_PROMO = "promo";
 
 }

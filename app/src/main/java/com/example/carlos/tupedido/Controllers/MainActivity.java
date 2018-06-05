@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initSharedPreferences();
+        userName = findViewById(R.id.UserName);
+        if(userName!=null)
+            userName.setText(user);
+
     }
     @Override
     public void initSharedPreferences(){
@@ -130,13 +134,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new ProductsFragment();
             FragmentTransaction = true;
         }else if (id == R.id.nav_drinks){
-            fragment = new ProductsFragment();
+            fragment = new DrinksFragment();
             FragmentTransaction = true;
         } else if (id == R.id.nav_myorders) {
-            fragment = new ProductsFragment();
+            fragment = new MyOrdersFragment();
             FragmentTransaction = true;
         } else if (id == R.id.nav_promotions) {
-            fragment = new ProductsFragment();
+            fragment = new PromoFragment();
             FragmentTransaction = true;
         } else if (id == R.id.nav_exit) {
             logOut();

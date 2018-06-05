@@ -31,12 +31,11 @@ public class HomeFragment extends Fragment{
     private List<Vf_images> imagesList;
     private String images[];
     private Button btn_products;
+    private Button btn_promo;
+    private Button btn_myOrders;
     public HomeFragment() {
 
     }
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,6 +58,35 @@ public class HomeFragment extends Fragment{
                 transaction.commit();
             }
         });
+
+        btn_promo = view.findViewById(R.id.btn_promo);
+        btn_promo.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                FragmentManager manager=getFragmentManager();
+                FragmentTransaction transaction=manager.beginTransaction();
+                transaction=manager.beginTransaction();
+                PromoFragment fragmentB=new PromoFragment();
+                transaction.replace(R.id.content_main,fragmentB);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        btn_myOrders = view.findViewById(R.id.btn_myorders);
+        btn_myOrders.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                FragmentManager manager=getFragmentManager();
+                FragmentTransaction transaction=manager.beginTransaction();
+                transaction=manager.beginTransaction();
+                MyOrdersFragment fragmentB=new MyOrdersFragment();
+                transaction.replace(R.id.content_main,fragmentB);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
 
         return view;
     }

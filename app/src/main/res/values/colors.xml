@@ -110,7 +110,7 @@
     <color name="material_purple_100">#E1BEE7</color>
     <color name="material_purple_200">#CE93D8</color>
     <color name="material_purple_300">#BA68C8</color>
-    <color name="material_purple_400">#AB47BC</color>
+    <color name="material_purple_400">#ab47bc</color>
     <color name="material_purple_500">#9C27B0</color>
     <color name="material_purple_600">#8E24AA</color>
     <color name="material_purple_700">#7B1FA2</color>
@@ -118,7 +118,7 @@
     <color name="material_purple_900">#4A148C</color>
     <color name="material_purple_a100">#EA80FC</color>
     <color name="material_purple_a200">#E040FB</color>
-    <color name="material_purple_a400">#D500F9</color>
+    <color name="material_purple_a400">#d500f9</color>
     <color name="material_purple_a700">#AA00FF</color>
 
     <!-- Selectors -->
@@ -131,7 +131,7 @@
     <color name="selector_red_pressed">#44D50000</color>
     <color name="selector_orange_focused">#22FF6D00</color>
     <color name="selector_orange_pressed">#44FF6D00</color>
-    <color name="selector_lime_focused">#22AEEA00</color>
+    <color name="selector_lime_focused">#22aeea00</color>
     <color name="selector_lime_pressed">#44AEEA00</color>
     <color name="selector_green_focused">#2200C853</color>
     <color name="selector_green_pressed">#4400C853</color>
