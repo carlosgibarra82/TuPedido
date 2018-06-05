@@ -47,6 +47,8 @@ public class ProductsFragment extends Fragment {
         return  view;
     }
 
+
+
     public void getData() {
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Service service = restApiAdapter.getClientService();

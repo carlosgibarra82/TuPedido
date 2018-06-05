@@ -92,10 +92,10 @@ public class HomeFragment extends Fragment{
     }
 
     private void setImageInFlipr(String imgUrl) {
-        ImageView image = new ImageView(this.getContext());
-        image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        Picasso.get().load(imgUrl).into(image);
-        viewFlipper.addView(image);
+        ImageView image1 = new ImageView(this.getContext());
+        image1.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        Picasso.get().load(imgUrl).into(image1);
+        viewFlipper.addView(image1);
     }
 
     public void products(View view){

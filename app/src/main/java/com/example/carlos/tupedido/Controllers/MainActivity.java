@@ -81,12 +81,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public void onBackPressed() {
         initSharedPreferences();
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }
+        }*/
     }
 
     @Override
@@ -129,11 +129,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if (id == R.id.nav_products) {
             fragment = new ProductsFragment();
             FragmentTransaction = true;
-
+        }else if (id == R.id.nav_drinks){
+            fragment = new ProductsFragment();
+            FragmentTransaction = true;
         } else if (id == R.id.nav_myorders) {
-
+            fragment = new ProductsFragment();
+            FragmentTransaction = true;
         } else if (id == R.id.nav_promotions) {
-
+            fragment = new ProductsFragment();
+            FragmentTransaction = true;
         } else if (id == R.id.nav_exit) {
             logOut();
         }
