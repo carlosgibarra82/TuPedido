@@ -24,4 +24,6 @@
     <string name="Ingredients">Ingredientes</string>
     <string name="price">Precio</string>
     <string name="drinks">Bebidas</string>
+    <string name="changepassword">Cambiar Contraseña</string>
+    <string name="plus">Más</string>
 </resources>
