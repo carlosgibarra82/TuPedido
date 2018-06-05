@@ -28,7 +28,7 @@ public class ProductsFragment extends Fragment {
     private ProgressBar progressBar;
     private RecyclerView recyclerView;
     private List<Dishes> dishesList;
-    private Button btn_products;
+
 
     public ProductsFragment() {
 
@@ -65,7 +65,4 @@ public class ProductsFragment extends Fragment {
             }
         });
     }
-
-
-
 }
