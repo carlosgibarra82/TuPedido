@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initSharedPreferences();
-
     }
     @Override
     public void initSharedPreferences(){
@@ -95,7 +94,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         userName = findViewById(R.id.UserName);
-        userName.setText(user);
+        if(userName!=null)
+            userName.setText(user);
         return true;
     }
 
