@@ -70,6 +70,7 @@ public class ProductsAdapter extends RecyclerView.Adapter{
                     myIntent.putExtra ("name", object.getName());
                     myIntent.putExtra("picture",object.getPicture().toString());
                     myIntent.putExtra("ingredients",object.getIngredients().toString());
+                    myIntent.putExtra("price", object.getPrice());
                     context.startActivity(myIntent);
                 }
             });

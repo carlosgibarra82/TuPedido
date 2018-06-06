@@ -1,7 +1,6 @@
 package com.example.carlos.tupedido.Controllers;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,8 +14,7 @@ import com.example.carlos.tupedido.ApiRest.Service;
 import com.example.carlos.tupedido.R;
 import com.example.carlos.tupedido.model.Users;
 
-import java.util.List;
-
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -36,6 +34,11 @@ public class ProfileActivity extends AppCompatActivity {
         user = findViewById(R.id.id_profile_user);
         password = findViewById(R.id.id_profile_password);
         confirm_password = findViewById(R.id.id_profile_confirm_password);
+        sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
+        user.setText(sharedPreferences.getString("user",""));
+        user.setEnabled(false);
+        user.setSelected(false);
+        password.requestFocus();
     }
 
 
@@ -52,6 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
                 editor.putString("password", password.getText().toString());
                 editor.putBoolean("persistence", true);
                 editor.commit();
+                this.finish();
 
             } else {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
@@ -66,15 +70,16 @@ public class ProfileActivity extends AppCompatActivity {
     public void putData(Users user){
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Service service = restApiAdapter.getClientService();
-        service.updateUser(user.getUsername(),user.getPassword()).enqueue(new Callback<List<Users>>() {
+
+        service.updateUser(user.getUsername(),user).enqueue(new Callback<ResponseBody>() {
 
             @Override
-            public void onResponse(Call<List<Users>> call, Response<List<Users>> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 Log.i("working","Funcionó");
             }
 
             @Override
-            public void onFailure(Call<List<Users>> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Log.e("not working","no funcionó");
             }
         });

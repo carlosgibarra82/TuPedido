@@ -29,8 +29,6 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
     private TextView password;
     private TextView confirm_password;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +36,6 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
         user = findViewById(R.id.edt_user);
         password = findViewById(R.id.edt_password);
         confirm_password = findViewById(R.id.edt_confirm_password);
-
     }
 
     @Override
@@ -66,7 +63,6 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
         else {
             Toast.makeText(this, "Fields are empty", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void putData(Users user){
@@ -86,6 +82,4 @@ public class SignUpActivity extends AppCompatActivity implements SignupActivityI
         });
 
     }
-
-
 }

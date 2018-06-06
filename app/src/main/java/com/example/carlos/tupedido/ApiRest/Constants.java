@@ -11,4 +11,6 @@ public class Constants {
     public static final String URL_GET_VF_IMAGES = "images";
     public static final String URL_GET_PROMO = "promo";
 
+    public static final String URL_PUT_USER ="users/{username}";
+
 }
