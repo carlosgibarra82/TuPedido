@@ -26,4 +26,6 @@
     <string name="drinks">Bebidas</string>
     <string name="changepassword">Cambiar Contraseña</string>
     <string name="plus">Más</string>
+    <string name="Add">+</string>
+    <string name="X">X</string>
 </resources>

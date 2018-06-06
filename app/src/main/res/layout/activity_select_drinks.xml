@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".Controllers.IngredientsActivity"
+    tools:context=".Controllers.SelectDrinksActivity"
     tools:layout_editor_absoluteY="81dp">
 
 
@@ -44,7 +44,7 @@
                 app:np_selectedTextSize="@dimen/text_size"
                 app:np_textColor="@color/colorPrimary"
                 app:np_textSize="@dimen/text_size"
-                app:np_value="5" >
+                app:np_value="5">
 
 
             </com.shawnlin.numberpicker.NumberPicker>
@@ -60,7 +60,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -82,32 +82,6 @@
                 android:background="@color/material_red_a700"
                 android:text="@string/X" />
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/txtIngredients"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginTop="1dp"
-            android:background="@color/material_green_400"
-            android:text="@string/Ingredients"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-        <ListView
-            android:id="@+id/lwIngredients"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:divider="@android:drawable/divider_horizontal_dim_dark" />
 
     </LinearLayout>
 

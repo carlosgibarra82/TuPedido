@@ -28,4 +28,6 @@
     <string name="drinks">Drinks</string>
     <string name="plus">Plus</string>
     <string name="changepassword">Change Password</string>
+    <string name="Add">+</string>
+    <string name="X">X</string>
 </resources>
