@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
 import com.example.carlos.tupedido.ApiRest.Service;
 import com.example.carlos.tupedido.R;
-import com.example.carlos.tupedido.model.Users;
+import com.example.carlos.tupedido.Model.Users;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

@@ -10,10 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.carlos.tupedido.Controllers.IngredientsActivity;
+import com.example.carlos.tupedido.Controllers.SelectDrinksActivity;
+import com.example.carlos.tupedido.Model.Drinks;
 import com.example.carlos.tupedido.R;
-import com.example.carlos.tupedido.model.Dishes;
-import com.example.carlos.tupedido.model.Drinks;
 import com.squareup.picasso.Picasso;
 
 import java.text.NumberFormat;
@@ -43,6 +42,7 @@ public class DrinksAdapter extends RecyclerView.Adapter{
         viewHolderProducts.textViewDrinkName.setText(object.getFlavor());
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         formatter.setMinimumFractionDigits(0);
+        viewHolderProducts.object=object;
         Picasso.get().load(object.getPicture()).into(viewHolderProducts.imageViewDrinkImg);
    }
 
@@ -52,6 +52,7 @@ public class DrinksAdapter extends RecyclerView.Adapter{
     public class ViewHolderDrinks extends RecyclerView.ViewHolder{
         TextView textViewDrinkName;
         ImageView imageViewDrinkImg;
+        Drinks object;
 
 
         public ViewHolderDrinks(View item,Context c) {
@@ -59,6 +60,16 @@ public class DrinksAdapter extends RecyclerView.Adapter{
             final Context context=c;
             textViewDrinkName = item.findViewById(R.id.id_txt_drink);
             imageViewDrinkImg = item.findViewById(R.id.id_img_drink);
+            item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent myIntent = new Intent(context, SelectDrinksActivity.class);
+                    myIntent.putExtra ("name", object.getFlavor());
+                    myIntent.putExtra("picture",object.getPicture().toString());
+                    myIntent.putExtra("price",object.getPrice());
+                    context.startActivity(myIntent);
+                }
+            });
         }
     }
 }

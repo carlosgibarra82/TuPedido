@@ -1,4 +1,4 @@
-package com.example.carlos.tupedido.model;
+package com.example.carlos.tupedido.Model;
 
 public class Promo {
 

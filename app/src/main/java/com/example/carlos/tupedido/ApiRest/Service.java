@@ -1,12 +1,12 @@
 package com.example.carlos.tupedido.ApiRest;
 
 import com.example.carlos.tupedido.Model.Orders;
-import com.example.carlos.tupedido.model.Devices;
-import com.example.carlos.tupedido.model.Dishes;
-import com.example.carlos.tupedido.model.Drinks;
-import com.example.carlos.tupedido.model.Promo;
-import com.example.carlos.tupedido.model.Users;
-import com.example.carlos.tupedido.model.Vf_images;
+import com.example.carlos.tupedido.Model.Devices;
+import com.example.carlos.tupedido.Model.Dishes;
+import com.example.carlos.tupedido.Model.Drinks;
+import com.example.carlos.tupedido.Model.Promo;
+import com.example.carlos.tupedido.Model.Users;
+import com.example.carlos.tupedido.Model.Vf_images;
 
 import java.util.List;
 

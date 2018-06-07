@@ -10,13 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.example.carlos.tupedido.Adapters.ProductsAdapter;
 import com.example.carlos.tupedido.Adapters.PromoAdapter;
 import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
 import com.example.carlos.tupedido.ApiRest.Service;
+import com.example.carlos.tupedido.Model.Promo;
 import com.example.carlos.tupedido.R;
-import com.example.carlos.tupedido.model.Dishes;
-import com.example.carlos.tupedido.model.Promo;
 
 import java.util.List;
 

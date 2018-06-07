@@ -1,16 +1,12 @@
 package com.example.carlos.tupedido.Controllers;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
-import com.example.carlos.tupedido.ApiRest.Service;
 import com.example.carlos.tupedido.R;
 import com.shawnlin.numberpicker.NumberPicker;
 import com.squareup.picasso.Picasso;
@@ -61,11 +57,11 @@ public class SelectDrinksActivity extends AppCompatActivity {
         price = bundle.getInt("price");
         setTitle(name);
         showValue(1);
-        String str_ing[] = bundle.getString("ingredients").substring(1,bundle.getString("ingredients").length()-1).split(",");
+//        String str_ing[] = bundle.getString("ingredients").substring(1,bundle.getString("ingredients").length()-1).split(",");
 
 
 
-        numberPicker = (NumberPicker) findViewById(R.id.number_picker);
+        numberPicker = findViewById(R.id.number_picker);
         String[] data = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
         numberPicker.setMinValue(1);
         numberPicker.setMaxValue(data.length);

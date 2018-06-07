@@ -1,14 +1,16 @@
-package com.example.carlos.tupedido.model;
+package com.example.carlos.tupedido.Model;
 
 public class Drinks {
     private String type;
     private String flavor;
     private String picture;
+    private int price;
 
-    public Drinks(String type, String flavor, String picture) {
+    public Drinks(String type, String flavor, String picture , int price) {
         this.type = type;
         this.flavor = flavor;
         this.picture = picture;
+        this.price = price;
     }
 
     public String getType() {
@@ -33,5 +35,13 @@ public class Drinks {
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

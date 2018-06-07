@@ -11,11 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.carlos.tupedido.Controllers.IngredientsActivity;
-import com.example.carlos.tupedido.model.Dishes;
+import com.example.carlos.tupedido.Model.Dishes;
 import com.example.carlos.tupedido.R;
 import com.squareup.picasso.Picasso;
 
-import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.List;
 

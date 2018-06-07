@@ -15,7 +15,7 @@ import android.widget.ViewFlipper;
 import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
 import com.example.carlos.tupedido.ApiRest.Service;
 import com.example.carlos.tupedido.R;
-import com.example.carlos.tupedido.model.Vf_images;
+import com.example.carlos.tupedido.Model.Vf_images;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

@@ -15,8 +15,8 @@ import com.example.carlos.tupedido.Adapters.ProductsAdapter;
 import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
 import com.example.carlos.tupedido.ApiRest.Service;
 import com.example.carlos.tupedido.R;
-import com.example.carlos.tupedido.model.Dishes;
-import com.example.carlos.tupedido.model.Drinks;
+import com.example.carlos.tupedido.Model.Dishes;
+import com.example.carlos.tupedido.Model.Drinks;
 
 import java.util.List;
 
