@@ -1,16 +1,34 @@
 package com.example.carlos.tupedido.Model;
 
-public class Orders {
-    private String name;
-    private String device;
-    private String[] dishes;
-    private String[] drinks;
+import com.j256.ormlite.field.DataType;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-    public Orders(String name, String device, String[] dishes, String[] drinks) {
-        this.name = name;
-        this.device = device;
-        this.dishes = dishes;
-        this.drinks = drinks;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+@DatabaseTable
+public class Orders {
+    @DatabaseField(generatedId = true)
+    private int _id;
+    private String name;
+    @DatabaseField
+    private String device;
+    @DatabaseField(dataType= DataType.SERIALIZABLE)
+    private ArrayList<String> dishes;
+    @DatabaseField(dataType= DataType.SERIALIZABLE)
+    private ArrayList<String> drinks;
+    @DatabaseField
+    private int price;
+
+
+    public int get_id() {
+        return _id;
+    }
+
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
     public String getName() {
@@ -29,19 +47,27 @@ public class Orders {
         this.device = device;
     }
 
-    public String[] getDishes() {
+    public ArrayList<String> getDishes() {
         return dishes;
     }
 
-    public void setDishes(String[] dishes) {
+    public void setDishes(ArrayList<String> dishes) {
         this.dishes = dishes;
     }
 
-    public String[] getDrinks() {
+    public ArrayList<String> getDrinks() {
         return drinks;
     }
 
-    public void setDrinks(String[] drinks) {
+    public void setDrinks(ArrayList<String> drinks) {
         this.drinks = drinks;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

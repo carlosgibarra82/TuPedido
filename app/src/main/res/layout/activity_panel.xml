@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.sothree.slidinguppanel.SlidingUpPanelLayout
+    android:id="@+id/slidePanel"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    android:background="@android:color/transparent"
     tools:context=".Controllers.PanelActivity"
-    app:umanoPanelHeight="10dp"
-    app:umanoShadowHeight="10dp">
+    app:umanoPanelHeight="30dp"
+    app:umanoShadowHeight="30dp">
 
     <include layout="@layout/content_main" />
 
