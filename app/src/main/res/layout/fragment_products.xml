@@ -14,6 +14,7 @@
     android:visibility="visible"/>
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="60dp"
         android:id="@+id/id_rcv_products"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
