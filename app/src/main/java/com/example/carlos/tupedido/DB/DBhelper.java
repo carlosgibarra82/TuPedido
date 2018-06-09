@@ -2,9 +2,8 @@ package com.example.carlos.tupedido.DB;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Environment;
 
-import com.example.carlos.tupedido.Model.Orders;
+import com.example.carlos.tupedido.Model.OrderLocal;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
@@ -18,7 +17,7 @@ public class DBhelper extends OrmLiteSqliteOpenHelper {
 
     private Context context;
 
-    private Dao<Orders, Integer> ordersDao;
+    private Dao<OrderLocal, Integer> ordersDao;
 
 
     public DBhelper(Context context) {
@@ -29,7 +28,7 @@ public class DBhelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db, ConnectionSource connectionSouce) {
         try {
-            TableUtils.createTable(connectionSouce, Orders.class);
+            TableUtils.createTable(connectionSouce, OrderLocal.class);
             new InitilizeDb(this.context);
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -41,9 +40,9 @@ public class DBhelper extends OrmLiteSqliteOpenHelper {
 
     }
 
-    public Dao<Orders, Integer> getOrdersDao() throws SQLException {
+    public Dao<OrderLocal, Integer> getOrdersDao() throws SQLException {
         if (ordersDao == null) {
-            ordersDao = getDao(Orders.class);
+            ordersDao = getDao(OrderLocal.class);
         }
         return ordersDao;
     }

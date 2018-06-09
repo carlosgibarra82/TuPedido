@@ -4,16 +4,9 @@ package com.example.carlos.tupedido.Controllers;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -25,13 +18,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.carlos.tupedido.DB.DBhelper;
-import com.example.carlos.tupedido.Model.Orders;
+import com.example.carlos.tupedido.Model.OrderLocal;
 import com.example.carlos.tupedido.R;
 import com.example.carlos.tupedido.Interfaces.MainActivityInterface;
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
-
-import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,MainActivityInterface{
 
@@ -39,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     TextView userName;
     String user;
     private DBhelper helper;
-    private Dao<Orders, Integer> ordersDao;
+    private Dao<OrderLocal, Integer> ordersDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         try{
             ordersDao = helper.getOrdersDao();
 
-            for(Orders order : ordersDao){
+            for(OrderLocal order : ordersDao){
                 System.out.println("hola "+order.getDevice());
             }
 

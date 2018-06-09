@@ -3,24 +3,20 @@ package com.example.carlos.tupedido.Controllers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
-import com.example.carlos.tupedido.ApiRest.RestApiAdapter;
-import com.example.carlos.tupedido.ApiRest.Service;
 import com.example.carlos.tupedido.DB.DBhelper;
-import com.example.carlos.tupedido.Model.Orders;
+import com.example.carlos.tupedido.Model.OrderLocal;
 import com.example.carlos.tupedido.R;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
@@ -31,12 +27,7 @@ import com.squareup.picasso.Picasso;
 import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class IngredientsActivity extends AppCompatActivity {
@@ -51,7 +42,7 @@ public class IngredientsActivity extends AppCompatActivity {
     private Button btn_close;
     private Context context;
     private DBhelper helper;
-    private Dao<Orders, Integer> ordersDao;
+    private Dao<OrderLocal, Integer> ordersDao;
     String name;
 
     @Override
@@ -124,15 +115,15 @@ public class IngredientsActivity extends AppCompatActivity {
        /* RestApiAdapter restApiAdapter = new RestApiAdapter();
         Service service = restApiAdapter.getClientService();
         String[] myStringArray = {"a","b","c"};
-        service.saveOrder("1","1",myStringArray,myStringArray).enqueue(new Callback<List<Orders>>() {
+        service.saveOrder("1","1",myStringArray,myStringArray).enqueue(new Callback<List<OrderLocal>>() {
 
             @Override
-            public void onResponse(Call<List<Orders>> call, Response<List<Orders>> response) {
+            public void onResponse(Call<List<OrderLocal>> call, Response<List<OrderLocal>> response) {
                 Log.i("working","Funcionó");
             }
 
             @Override
-            public void onFailure(Call<List<Orders>> call, Throwable t) {
+            public void onFailure(Call<List<OrderLocal>> call, Throwable t) {
                 Log.e("not working","no funcionó");
             }
         });*/
@@ -141,23 +132,26 @@ public class IngredientsActivity extends AppCompatActivity {
         helper = OpenHelperManager.getHelper(this.context,DBhelper.class);
         SharedPreferences sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
 
+
         ordersDao = helper.getOrdersDao();
-            Orders order = new Orders();
-            order.setDevice("1");
-            order.setName(sharedPreferences.getString("user",""));
-            ArrayList<String> dish = new ArrayList<>();
-            dish.add(name);
-            order.setDishes(dish);
-            order.setPrice(price);
+            OrderLocal order = new OrderLocal();
+            order.setName(name);
+            order.setDevice(sharedPreferences.getString("device",null));
+            order.setType("1");
+            order.setQuantity(numberPicker.getValue());
+            order.setPrice(price*numberPicker.getValue());
             ordersDao.create(order);
+            Toast.makeText(getBaseContext(), "Agregado al Carrito de Pedidos", Toast.LENGTH_LONG).show();
+            finish();
 
 
-        List<Orders> ordenes =ordersDao.queryForAll();
+
+        /*List<OrderLocal> ordenes =ordersDao.queryForAll();
         String registroOrdenes="";
-        for(Orders order1 : ordenes){
-            registroOrdenes += "(" +order1.get_id() +","+ order1.getName() +","+order1.getDevice() +","+ order1.getDishes()+","+order1.getDrinks()+")";
+        for(OrderLocal order1 : ordenes){
+            registroOrdenes += "(" +order1.get_id() +","+ order1.getName() +","+order1.getDevice() +","+ order1.getType()+","+order1.getPrice()+")";
 
         }
-        System.out.println(registroOrdenes);
+        System.out.println(registroOrdenes);*/
     }
 }

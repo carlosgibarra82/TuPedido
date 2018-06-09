@@ -1,6 +1,6 @@
 package com.example.carlos.tupedido.ApiRest;
 
-import com.example.carlos.tupedido.Model.Orders;
+import com.example.carlos.tupedido.Model.OrderLocal;
 import com.example.carlos.tupedido.Model.Devices;
 import com.example.carlos.tupedido.Model.Dishes;
 import com.example.carlos.tupedido.Model.Drinks;
@@ -16,7 +16,6 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -54,7 +53,7 @@ public interface Service {
 
     @POST(Constants.URL_POST_ORDER)
     @FormUrlEncoded
-    Call<List<Orders>> saveOrder(
+    Call<List<OrderLocal>> saveOrder(
             @Field("user") String username,
             @Field("device") String password,
             @Field("dishes") String[] dishes,

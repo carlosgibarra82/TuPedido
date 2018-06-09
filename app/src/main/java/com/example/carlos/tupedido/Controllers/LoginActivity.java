@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +53,7 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityInt
     @Override
     public void Login(View view) {
         sharedPreferences = getSharedPreferences("PreferencesTuPedido", Context.MODE_PRIVATE);
+        final String androidId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
         if (txt_username.getText().toString().isEmpty() || txt_password.getText().toString().isEmpty()) {
             Toast.makeText(this, "Some Field is empty", Toast.LENGTH_SHORT).show();
@@ -60,6 +63,7 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityInt
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("user", txt_username.getText().toString());
                 editor.putString("password", txt_password.getText().toString());
+                editor.putString("device", androidId);
                 editor.putBoolean("persistence", true);
                 editor.apply();
                 Intent intent = new Intent(this, MainActivity.class);
